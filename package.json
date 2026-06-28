@@ -1,0 +1,56 @@
+{
+  "name": "better-react-confetti",
+  "version": "0.1.0",
+  "description": "A lightweight canvas-based React confetti implementation inspired by @tholman/confetti.",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup src/index.tsx --format esm,cjs --dts --external react --external react-dom",
+    "compat:react": "node scripts/react-compat.mjs",
+    "dev": "vite --host 127.0.0.1",
+    "profile": "pnpm build && vite --host 127.0.0.1 --port 4173",
+    "profile:run": "node scripts/profile.mjs",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "keywords": [
+    "react",
+    "confetti",
+    "canvas",
+    "animation"
+  ],
+  "license": "ISC",
+  "peerDependencies": {
+    "react": ">=18.3.0 <20",
+    "react-dom": ">=18.3.0 <20"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.56.1",
+    "@tholman/confetti": "1.0.8",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.1.2",
+    "jsdom": "^27.3.0",
+    "playwright": "^1.56.1",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3",
+    "vite": "^7.2.7",
+    "vitest": "^4.0.15"
+  }
+}
